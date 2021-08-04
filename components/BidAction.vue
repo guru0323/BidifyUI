@@ -163,7 +163,7 @@ export default {
 
       const payload = {
         $store: this.$store,
-        id: this.listing.id
+        id: this.listing.listing_id
       }
 
       await listings.bid(payload)

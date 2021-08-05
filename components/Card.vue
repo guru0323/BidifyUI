@@ -1,6 +1,6 @@
 <template>
   <el-card class="card is-themed" shadow="hover" :body-style="{ padding: '0px' }">
-    <NuxtLink class="card-image" :to="`/listing/${ item.id }/${ item.platform }/${ item.token }`">
+    <NuxtLink class="card-image" :to="`/listing/${ item.listing_id }/${ item.platform }/${ item.token }`">
       <div class="card-image-spacing">
         <img :src="item.image_preview_url" class="image">
       </div>
@@ -17,8 +17,8 @@
         title="Auction"
         width="240"
         trigger="hover"
-        :content="`Ends in ${time}`">
-
+        :content="`Ends in ${time}`"
+      >
         <div slot="reference" class="action unlocked">
           {{ time }}
         </div>

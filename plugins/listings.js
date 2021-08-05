@@ -54,8 +54,7 @@ async function addAssetsToListings (listings) {
   const assets = transformAssets(await seaport.getAssets(assetList))
 
   return listings.map((l) => {
-    let match = assets.find(t => t.address === l.platform && t.token === l.token_id)
-
+    let match = assets.find(t => t.address.toLowerCase() === l.platform.toLowerCase() && t.token_id === l.token)
     if (!match) {
       match = {
         label: `Bidify ${l.id}`,
@@ -66,7 +65,7 @@ async function addAssetsToListings (listings) {
       }
     }
 
-    return Object.assign({}, l, match)
+    return Object.assign({ listing_id: l.id }, l, match)
   })
 }
 

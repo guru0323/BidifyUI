@@ -52,7 +52,7 @@ export default {
     infuraURL: process.env.INFURA_URL || 'https://rinkeby.infura.io/v3/96ffec68046b4148872ac3b0453d0b4f',
     openseaURL: process.env.OPENSEA_URL || 'https://rinkeby-api.opensea.io/api/v1/',
     openseaAssetsURL: process.env.OPENSEA_ASSETS_URL || '${openseaURL}assets',
-    bidifyAddress: process.env.BIDIFY_ADDRESS || '0x4d4d6B16a15244Bd37D29371DF6F071a3da8fA43',
+    bidifyAddress: process.env.BIDIFY_ADDRESS || '0x451d44624D29874A0Ba90bD902D2BD95CCD3A48d',
     nftAddress: process.env.NFT_ADDRESS || '0x22315052952395e072469048330716659b27d857',
     validChains: process.env.VALID_CHAINS || ['0x4', 'rinkeby', 4], //'0x1', 'main', 1,
     chainNames: process.env.CHAIN_NAMES || ['Rinkeby'] // 'Mainnet'

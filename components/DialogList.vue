@@ -66,8 +66,8 @@ export default {
       }
 
       return {
-        platform: listModal.platform,
-        token: listModal.token
+        platform: listModal.address,
+        token: listModal.token_id
       }
     }
   },
@@ -81,8 +81,8 @@ export default {
       const listModal = this.$store.state.bidify.listModal
 
       const params = {
-        platform: listModal.platform,
-        token: listModal.token,
+        platform: listModal.address,
+        token: listModal.token_id,
         price: this.price.toString(),
         days: this.days.toString()
       }

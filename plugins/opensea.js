@@ -98,7 +98,7 @@ export async function getAssets (list) {
   })
 
   try {
-    results = await fetch(`${settings.openseaAssetsURL}?order_direction=desc&offset=0&limit=40${query}`, options)
+    results = await fetch(`${settings.openseaAssetsURL}?order_direction=desc&offset=0&limit=40${query.join('')}`, options)
   } catch (e) {
     console.log('no results')
     return null

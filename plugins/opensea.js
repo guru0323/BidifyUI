@@ -43,7 +43,7 @@ export const seaport = new OpenSeaPort(provider, {
  * @memberof OpenSea
  */
 
-export async function checkBalance ({ address, tokens, $store }) {
+export async function checkBalance({ address, tokens, $store }) {
   if (!tokens.assets) {
     return tokens
   }
@@ -84,7 +84,7 @@ export async function checkBalance ({ address, tokens, $store }) {
  * @memberof OpenSea
  */
 
-export async function getAssets (list) {
+export async function getAssets(list) {
   const options = { method: 'GET' }
 
   let results
@@ -115,7 +115,7 @@ export async function getAssets (list) {
  * @memberof OpenSea
  */
 
-export async function getAsset ({ address, tokenId }) {
+export async function getAsset({ address, tokenId }) {
   const options = { method: 'GET' }
 
   let results
@@ -138,7 +138,7 @@ export async function getAsset ({ address, tokenId }) {
  * @memberof OpenSea
  */
 
-export async function getOwned (account) {
+export async function getOwned(account) {
   const options = { method: 'GET' }
 
   let results

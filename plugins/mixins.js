@@ -4,7 +4,7 @@ import Vue from 'vue'
 
 Vue.mixin({
   methods: {
-    mySpecialMethod (value) {
+    mySpecialMethod(value) {
 
     }
   },

@@ -39,7 +39,7 @@ export const onError = ({ type, $store, err }) => {
 }
 
 // check wallet connection
-export async function checkProvider ({ $store }) {
+export async function checkProvider({ $store }) {
   const provider = await detectEthereumProvider()
 
   if (provider.isMetaMask) {
@@ -48,7 +48,7 @@ export async function checkProvider ({ $store }) {
 }
 
 // check wallet connection
-export async function checkConnection ({ $store }) {
+export async function checkConnection({ $store }) {
   checkProvider({ $store })
 
   const connections = {}
@@ -83,7 +83,7 @@ export async function checkConnection ({ $store }) {
 }
 
 // ask for wallet connection
-export async function requestAccounts ({ $store, type }) {
+export async function requestAccounts({ $store, type }) {
   $store.commit('wallets/pending', type)
 
   const args = { type, $store, onAccountChange, onChainChange, onChainError, onDisconnect, onError }

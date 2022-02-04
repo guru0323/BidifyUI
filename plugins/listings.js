@@ -41,7 +41,7 @@ const transformAssets = (listings) => {
  * @memberof listings
  */
 
-async function addAssetsToListings (listings) {
+async function addAssetsToListings(listings) {
   const seaport = require('~/plugins/opensea.js')
 
   const assetList = listings.map((l) => {
@@ -77,7 +77,7 @@ async function addAssetsToListings (listings) {
  * @memberof listings
  */
 
-async function addAssetsToNfts (nfts) {
+async function addAssetsToNfts(nfts) {
   const seaport = require('~/plugins/opensea.js')
 
   const assetList = nfts.map((l) => {
@@ -116,7 +116,7 @@ async function addAssetsToNfts (nfts) {
  * @memberof listings
  */
 
-export async function get ({ $store }) {
+export async function get({ $store }) {
   const bidify = require('~/plugins/bidify.js')
 
   // get bidify listings
@@ -142,7 +142,7 @@ export async function get ({ $store }) {
  * @memberof listings
  */
 
-export async function getOwnedListings ({ $store }) {
+export async function getOwnedListings({ $store }) {
   const bidify = require('~/plugins/bidify.js')
 
   const account = $store.state.wallets.account
@@ -175,7 +175,7 @@ export async function getOwnedListings ({ $store }) {
  * @memberof listings
  */
 
-export async function getOne ({ $store, $route }) {
+export async function getOne({ $store, $route }) {
   const bidify = require('~/plugins/bidify.js')
 
   const id = $route.params.id.toString()
@@ -199,7 +199,7 @@ export async function getOne ({ $store, $route }) {
  * @memberof listings
  */
 
-export async function getOwnedNFTs ({ $store }) {
+export async function getOwnedNFTs({ $store }) {
   const bidify = require('~/plugins/bidify.js')
 
   const nfts = await bidify.getNFTs()
@@ -220,7 +220,7 @@ export async function getOwnedNFTs ({ $store }) {
  * @memberof listings
  */
 
-export async function list ({ $store, params }) {
+export async function list({ $store, params }) {
   const bidify = require('~/plugins/bidify.js')
 
   $store.commit('bidify/signing', true)
@@ -246,7 +246,7 @@ export async function list ({ $store, params }) {
  * @memberof listings
  */
 
-export async function bid ({ $store, id }) {
+export async function bid({ $store, id }) {
   const bidify = require('~/plugins/bidify.js')
 
   $store.commit('bidify/signing', true)
@@ -280,7 +280,7 @@ export async function bid ({ $store, id }) {
  * @memberof listings
  */
 
-export async function mint ({ $store, tokenId }) {
+export async function mint({ $store, tokenId }) {
   const bidify = require('~/plugins/bidify.js')
 
   return await bidify.mintNFT(tokenId)

@@ -19,7 +19,7 @@ export const network = ({ $store, onChainChange, onChainError }) => {
   })
 }
 
-export function connected () {
+export function connected() {
   // Initialize a Web3 object
   const connector = new WalletConnect({
     bridge: 'https://bridge.walletconnect.org'
@@ -28,7 +28,7 @@ export function connected () {
   return connector.connected
 }
 
-export async function request ({ type, $store, onAccountChange, onChainChange, onChainError, onDisconnect, onError }) {
+export async function request({ type, $store, onAccountChange, onChainChange, onChainError, onDisconnect, onError }) {
   //  Enable session (triggers QR Code modal)
   await provider.enable()
 
@@ -45,7 +45,7 @@ export async function request ({ type, $store, onAccountChange, onChainChange, o
 }
 
 // close connection (refreshes window)
-export async function close () {
+export async function close() {
   await provider.disconnect()
 }
 

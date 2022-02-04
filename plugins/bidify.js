@@ -26,7 +26,7 @@ let from
  * @memberof Bidify
  */
 
-export async function init () {
+export async function init() {
   const provider = await detectEthereumProvider()
 
   web3 = await new Web3(provider)
@@ -45,7 +45,7 @@ export async function init () {
  * @memberof Bidify
  */
 
-export async function onAccountChange ({ $store, type, accounts, web3Provider }) {
+export async function onAccountChange({ $store, type, accounts, web3Provider }) {
   const account = accounts[0]
 
   const ready = $store.state.localStorage.status
@@ -228,7 +228,7 @@ export async function getNFTs() {
  * @memberof Bidify
  */
 
-export async function signList ({ currency, platform, token, price, days, allowMarketplace = false }) {
+export async function signList({ currency, platform, token, price, days, allowMarketplace = false }) {
   let decimals = await getDecimals(currency)
 
   if (!currency) {
@@ -251,7 +251,7 @@ export async function signList ({ currency, platform, token, price, days, allowM
  * @memberof Bidify
  */
 
-export async function list ({ currency, platform, token, price, days, allowMarketplace = false }) {
+export async function list({ currency, platform, token, price, days, allowMarketplace = false }) {
   let decimals = await getDecimals(currency)
 
   if (!currency) {
@@ -272,7 +272,7 @@ export async function list ({ currency, platform, token, price, days, allowMarke
  * @memberof Bidify
  */
 
-export async function getListing (id) {
+export async function getListing(id) {
   const nullIfZeroAddress = (value) => {
     if (value === '0x0000000000000000000000000000000000000000') {
       return null
@@ -345,7 +345,7 @@ export async function getListing (id) {
  * @memberof Bidify
  */
 
-export async function signBid (id) {
+export async function signBid(id) {
   let currency = (await getListing(id)).currency
 
   if (currency) {
@@ -367,7 +367,7 @@ export async function signBid (id) {
  * @memberof Bidify
  */
 
-export async function bid (id) {
+export async function bid(id) {
   let currency = (await getListing(id)).currency
 
   if (currency) {
@@ -455,9 +455,9 @@ export async function withdraw() {
  * @memberof Bidify
  */
 
-const TestNFTJSON = [{'inputs':[{'internalType':'string','name':'name_','type':'string'},{'internalType':'string','name':'symbol_','type':'string'}],'stateMutability':'nonpayable','type':'constructor'},{'anonymous':false,'inputs':[{'indexed':true,'internalType':'address','name':'owner','type':'address'},{'indexed':true,'internalType':'address','name':'approved','type':'address'},{'indexed':true,'internalType':'uint256','name':'tokenId','type':'uint256'}],'name':'Approval','type':'event'},{'anonymous':false,'inputs':[{'indexed':true,'internalType':'address','name':'owner','type':'address'},{'indexed':true,'internalType':'address','name':'operator','type':'address'},{'indexed':false,'internalType':'bool','name':'approved','type':'bool'}],'name':'ApprovalForAll','type':'event'},{'anonymous':false,'inputs':[{'indexed':true,'internalType':'address','name':'from','type':'address'},{'indexed':true,'internalType':'address','name':'to','type':'address'},{'indexed':true,'internalType':'uint256','name':'tokenId','type':'uint256'}],'name':'Transfer','type':'event'},{'inputs':[{'internalType':'bytes4','name':'interfaceId','type':'bytes4'}],'name':'supportsInterface','outputs':[{'internalType':'bool','name':'','type':'bool'}],'stateMutability':'view','type':'function','constant':true},{'inputs':[{'internalType':'address','name':'owner','type':'address'}],'name':'balanceOf','outputs':[{'internalType':'uint256','name':'','type':'uint256'}],'stateMutability':'view','type':'function','constant':true},{'inputs':[{'internalType':'uint256','name':'tokenId','type':'uint256'}],'name':'ownerOf','outputs':[{'internalType':'address','name':'','type':'address'}],'stateMutability':'view','type':'function','constant':true},{'inputs':[],'name':'name','outputs':[{'internalType':'string','name':'','type':'string'}],'stateMutability':'view','type':'function','constant':true},{'inputs':[],'name':'symbol','outputs':[{'internalType':'string','name':'','type':'string'}],'stateMutability':'view','type':'function','constant':true},{'inputs':[{'internalType':'uint256','name':'tokenId','type':'uint256'}],'name':'tokenURI','outputs':[{'internalType':'string','name':'','type':'string'}],'stateMutability':'view','type':'function','constant':true},{'inputs':[],'name':'baseURI','outputs':[{'internalType':'string','name':'','type':'string'}],'stateMutability':'view','type':'function','constant':true},{'inputs':[{'internalType':'address','name':'owner','type':'address'},{'internalType':'uint256','name':'index','type':'uint256'}],'name':'tokenOfOwnerByIndex','outputs':[{'internalType':'uint256','name':'','type':'uint256'}],'stateMutability':'view','type':'function','constant':true},{'inputs':[],'name':'totalSupply','outputs':[{'internalType':'uint256','name':'','type':'uint256'}],'stateMutability':'view','type':'function','constant':true},{'inputs':[{'internalType':'uint256','name':'index','type':'uint256'}],'name':'tokenByIndex','outputs':[{'internalType':'uint256','name':'','type':'uint256'}],'stateMutability':'view','type':'function','constant':true},{'inputs':[{'internalType':'address','name':'to','type':'address'},{'internalType':'uint256','name':'tokenId','type':'uint256'}],'name':'approve','outputs':[],'stateMutability':'nonpayable','type':'function'},{'inputs':[{'internalType':'uint256','name':'tokenId','type':'uint256'}],'name':'getApproved','outputs':[{'internalType':'address','name':'','type':'address'}],'stateMutability':'view','type':'function','constant':true},{'inputs':[{'internalType':'address','name':'operator','type':'address'},{'internalType':'bool','name':'approved','type':'bool'}],'name':'setApprovalForAll','outputs':[],'stateMutability':'nonpayable','type':'function'},{'inputs':[{'internalType':'address','name':'owner','type':'address'},{'internalType':'address','name':'operator','type':'address'}],'name':'isApprovedForAll','outputs':[{'internalType':'bool','name':'','type':'bool'}],'stateMutability':'view','type':'function','constant':true},{'inputs':[{'internalType':'address','name':'from','type':'address'},{'internalType':'address','name':'to','type':'address'},{'internalType':'uint256','name':'tokenId','type':'uint256'}],'name':'transferFrom','outputs':[],'stateMutability':'nonpayable','type':'function'},{'inputs':[{'internalType':'address','name':'from','type':'address'},{'internalType':'address','name':'to','type':'address'},{'internalType':'uint256','name':'tokenId','type':'uint256'}],'name':'safeTransferFrom','outputs':[],'stateMutability':'nonpayable','type':'function'},{'inputs':[{'internalType':'address','name':'from','type':'address'},{'internalType':'address','name':'to','type':'address'},{'internalType':'uint256','name':'tokenId','type':'uint256'},{'internalType':'bytes','name':'_data','type':'bytes'}],'name':'safeTransferFrom','outputs':[],'stateMutability':'nonpayable','type':'function'},{'inputs':[{'internalType':'address','name':'to','type':'address'},{'internalType':'uint256','name':'tokenId','type':'uint256'}],'name':'_mintActual','outputs':[],'stateMutability':'nonpayable','type':'function'},{'inputs':[{'internalType':'uint256','name':'tokenId','type':'uint256'}],'name':'_mint','outputs':[],'stateMutability':'nonpayable','type':'function'}]
+const TestNFTJSON = [{ 'inputs': [{ 'internalType': 'string', 'name': 'name_', 'type': 'string' }, { 'internalType': 'string', 'name': 'symbol_', 'type': 'string' }], 'stateMutability': 'nonpayable', 'type': 'constructor' }, { 'anonymous': false, 'inputs': [{ 'indexed': true, 'internalType': 'address', 'name': 'owner', 'type': 'address' }, { 'indexed': true, 'internalType': 'address', 'name': 'approved', 'type': 'address' }, { 'indexed': true, 'internalType': 'uint256', 'name': 'tokenId', 'type': 'uint256' }], 'name': 'Approval', 'type': 'event' }, { 'anonymous': false, 'inputs': [{ 'indexed': true, 'internalType': 'address', 'name': 'owner', 'type': 'address' }, { 'indexed': true, 'internalType': 'address', 'name': 'operator', 'type': 'address' }, { 'indexed': false, 'internalType': 'bool', 'name': 'approved', 'type': 'bool' }], 'name': 'ApprovalForAll', 'type': 'event' }, { 'anonymous': false, 'inputs': [{ 'indexed': true, 'internalType': 'address', 'name': 'from', 'type': 'address' }, { 'indexed': true, 'internalType': 'address', 'name': 'to', 'type': 'address' }, { 'indexed': true, 'internalType': 'uint256', 'name': 'tokenId', 'type': 'uint256' }], 'name': 'Transfer', 'type': 'event' }, { 'inputs': [{ 'internalType': 'bytes4', 'name': 'interfaceId', 'type': 'bytes4' }], 'name': 'supportsInterface', 'outputs': [{ 'internalType': 'bool', 'name': '', 'type': 'bool' }], 'stateMutability': 'view', 'type': 'function', 'constant': true }, { 'inputs': [{ 'internalType': 'address', 'name': 'owner', 'type': 'address' }], 'name': 'balanceOf', 'outputs': [{ 'internalType': 'uint256', 'name': '', 'type': 'uint256' }], 'stateMutability': 'view', 'type': 'function', 'constant': true }, { 'inputs': [{ 'internalType': 'uint256', 'name': 'tokenId', 'type': 'uint256' }], 'name': 'ownerOf', 'outputs': [{ 'internalType': 'address', 'name': '', 'type': 'address' }], 'stateMutability': 'view', 'type': 'function', 'constant': true }, { 'inputs': [], 'name': 'name', 'outputs': [{ 'internalType': 'string', 'name': '', 'type': 'string' }], 'stateMutability': 'view', 'type': 'function', 'constant': true }, { 'inputs': [], 'name': 'symbol', 'outputs': [{ 'internalType': 'string', 'name': '', 'type': 'string' }], 'stateMutability': 'view', 'type': 'function', 'constant': true }, { 'inputs': [{ 'internalType': 'uint256', 'name': 'tokenId', 'type': 'uint256' }], 'name': 'tokenURI', 'outputs': [{ 'internalType': 'string', 'name': '', 'type': 'string' }], 'stateMutability': 'view', 'type': 'function', 'constant': true }, { 'inputs': [], 'name': 'baseURI', 'outputs': [{ 'internalType': 'string', 'name': '', 'type': 'string' }], 'stateMutability': 'view', 'type': 'function', 'constant': true }, { 'inputs': [{ 'internalType': 'address', 'name': 'owner', 'type': 'address' }, { 'internalType': 'uint256', 'name': 'index', 'type': 'uint256' }], 'name': 'tokenOfOwnerByIndex', 'outputs': [{ 'internalType': 'uint256', 'name': '', 'type': 'uint256' }], 'stateMutability': 'view', 'type': 'function', 'constant': true }, { 'inputs': [], 'name': 'totalSupply', 'outputs': [{ 'internalType': 'uint256', 'name': '', 'type': 'uint256' }], 'stateMutability': 'view', 'type': 'function', 'constant': true }, { 'inputs': [{ 'internalType': 'uint256', 'name': 'index', 'type': 'uint256' }], 'name': 'tokenByIndex', 'outputs': [{ 'internalType': 'uint256', 'name': '', 'type': 'uint256' }], 'stateMutability': 'view', 'type': 'function', 'constant': true }, { 'inputs': [{ 'internalType': 'address', 'name': 'to', 'type': 'address' }, { 'internalType': 'uint256', 'name': 'tokenId', 'type': 'uint256' }], 'name': 'approve', 'outputs': [], 'stateMutability': 'nonpayable', 'type': 'function' }, { 'inputs': [{ 'internalType': 'uint256', 'name': 'tokenId', 'type': 'uint256' }], 'name': 'getApproved', 'outputs': [{ 'internalType': 'address', 'name': '', 'type': 'address' }], 'stateMutability': 'view', 'type': 'function', 'constant': true }, { 'inputs': [{ 'internalType': 'address', 'name': 'operator', 'type': 'address' }, { 'internalType': 'bool', 'name': 'approved', 'type': 'bool' }], 'name': 'setApprovalForAll', 'outputs': [], 'stateMutability': 'nonpayable', 'type': 'function' }, { 'inputs': [{ 'internalType': 'address', 'name': 'owner', 'type': 'address' }, { 'internalType': 'address', 'name': 'operator', 'type': 'address' }], 'name': 'isApprovedForAll', 'outputs': [{ 'internalType': 'bool', 'name': '', 'type': 'bool' }], 'stateMutability': 'view', 'type': 'function', 'constant': true }, { 'inputs': [{ 'internalType': 'address', 'name': 'from', 'type': 'address' }, { 'internalType': 'address', 'name': 'to', 'type': 'address' }, { 'internalType': 'uint256', 'name': 'tokenId', 'type': 'uint256' }], 'name': 'transferFrom', 'outputs': [], 'stateMutability': 'nonpayable', 'type': 'function' }, { 'inputs': [{ 'internalType': 'address', 'name': 'from', 'type': 'address' }, { 'internalType': 'address', 'name': 'to', 'type': 'address' }, { 'internalType': 'uint256', 'name': 'tokenId', 'type': 'uint256' }], 'name': 'safeTransferFrom', 'outputs': [], 'stateMutability': 'nonpayable', 'type': 'function' }, { 'inputs': [{ 'internalType': 'address', 'name': 'from', 'type': 'address' }, { 'internalType': 'address', 'name': 'to', 'type': 'address' }, { 'internalType': 'uint256', 'name': 'tokenId', 'type': 'uint256' }, { 'internalType': 'bytes', 'name': '_data', 'type': 'bytes' }], 'name': 'safeTransferFrom', 'outputs': [], 'stateMutability': 'nonpayable', 'type': 'function' }, { 'inputs': [{ 'internalType': 'address', 'name': 'to', 'type': 'address' }, { 'internalType': 'uint256', 'name': 'tokenId', 'type': 'uint256' }], 'name': '_mintActual', 'outputs': [], 'stateMutability': 'nonpayable', 'type': 'function' }, { 'inputs': [{ 'internalType': 'uint256', 'name': 'tokenId', 'type': 'uint256' }], 'name': '_mint', 'outputs': [], 'stateMutability': 'nonpayable', 'type': 'function' }]
 
-export async function mintNFT (token) {
+export async function mintNFT(token) {
   await (new web3.eth.Contract(TestNFTJSON, settings.nftAddress)).methods._mint(token).send({ from })
 
   return { token, address: settings.nftAddress }

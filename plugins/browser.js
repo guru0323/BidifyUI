@@ -7,7 +7,7 @@ let provider
 // Initialize a Web3 object
 let web3
 
-export async function setProvider () {
+export async function setProvider() {
   provider = await detectEthereumProvider()
 
   web3 = new Web3(provider)
@@ -24,7 +24,7 @@ export const network = ({ $store, onChainChange, onChainError }) => {
 }
 
 // check connection via object
-export async function connected () {
+export async function connected() {
   if (!provider || !web3) {
     await setProvider()
   }
@@ -39,7 +39,7 @@ export async function connected () {
 }
 
 // request access through UI
-export async function request ({ type, $store, onAccountChange, onChainChange, onChainError, onDisconnect, onError }) {
+export async function request({ type, $store, onAccountChange, onChainChange, onChainError, onDisconnect, onError }) {
   if (!provider || !web3) {
     await setProvider()
   }
